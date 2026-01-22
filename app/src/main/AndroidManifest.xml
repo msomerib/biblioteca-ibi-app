@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.bibliotecaibi"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permissão para câmera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Permissão para acessar internet (API Google Books/OpenLibrary) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:label="Biblioteca IBI"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BibliotecaIBI">
+
+        <activity
+           
+package com.bibliotecaibi
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.material3.*
+import androidx.navigation.compose.rememberNavController
+import com.bibliotecaibi.ui.navigation.AppNavHost
+import com.bibliotecaibi.ui.theme.BibliotecaIBITheme
+import onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // Inicializa dados padrão (owner, filial e usuário admin)
+        MainScope().launch {
+            Seed.ensureInitialData(this@MainActivity)
+        }
+
+        setContent {
+            BibliotecaIBITheme {
+                val navController = rememberNavController()
+                AppNavHost(navController)
+            }
+        }
+    }
+}

@@ -1,4 +1,3 @@
-cat > settings.gradle.kts <<'EOF'
 pluginManagement {
     repositories {
         google()
@@ -22,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "BibliotecaIBI"
 include(":app")
-EOF

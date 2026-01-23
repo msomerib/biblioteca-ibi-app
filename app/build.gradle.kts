@@ -1,7 +1,8 @@
+// app/build.gradle.kts — TOPO DO ARQUIVO
 plugins {
     id("com.android.application") version "8.6.0"
     id("org.jetbrains.kotlin.android") version "1.9.22"
-    id("org.jetbrains.kotlin.kapt") version "1.9.22"
+    id("org.jetbrains.kotlin.kapt") version "1.9.22")
 }
 
 android {

@@ -1,13 +1,19 @@
+cat > settings.gradle.kts <<'EOF'
 pluginManagement {
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
     }
+    plugins {
+        id("com.android.application") version "8.6.0"
+        id("org.jetbrains.kotlin.android") version "1.9.22"
+        id("org.jetbrains.kotlin.kapt") version "1.9.22"
+    }
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
@@ -16,3 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "BibliotecaIBI"
 include(":app")
+EOF

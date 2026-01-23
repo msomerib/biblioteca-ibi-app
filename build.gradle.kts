@@ -1,2 +1,3 @@
-// build.gradle.kts (raiz) – mantido mínimo de propósito
-plugins { }
+cat > build.gradle.kts <<'EOF'
+// build.gradle.kts (raiz) — mínimo de propósito
+// Repositórios e plugins são resolvidos pelo
